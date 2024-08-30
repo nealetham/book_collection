@@ -2,18 +2,18 @@
 require 'rails_helper'
 
 RSpec.describe 'Creating a book', type: :feature do
-    def fill_in_book_form(title:, author:, price:, pdate_year:, pdate_month:, pdate_day:)
-        visit new_book_path
-        fill_in "book[title]", with: title
-        fill_in "book[author]", with: author
-        fill_in "book[price]", with: price
+  def fill_in_book_form(title:, author:, price:, pdate_year:, pdate_month:, pdate_day:)
+    visit new_book_path
+    fill_in "book[title]", with: title
+    fill_in "book[author]", with: author
+    fill_in "book[price]", with: price
 
-        # Fill in the date using date_select
-        select pdate_day, from: 'book_pdate_3i' # day
-        select pdate_month, from: 'book_pdate_2i' # month
-        select pdate_year, from: 'book_pdate_1i' # year
-    end
-      
+    # Fill in the date using date_select
+    select pdate_day, from: 'book_pdate_3i' # day
+    select pdate_month, from: 'book_pdate_2i' # month
+    select pdate_year, from: 'book_pdate_1i' # year
+  end
+
   scenario 'valid inputs' do
     fill_in_book_form(title: 'Harry Potter', author: 'J.K Rowling', price: '25.0', pdate_year: '1997', pdate_month: 'June', pdate_day: '26')
     click_on 'Create Book'
