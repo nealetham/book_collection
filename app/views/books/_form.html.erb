@@ -25,7 +25,7 @@
 
     <div>
         <%= form.label "Published Date" %><br>
-        <%= form.date_select :pdate, start_year: 1600 %>
+        <%= form.date_select :pdate, :start_year => Date.current.year, :end_year => 1600, :include_blank => true %>
         <% book.errors.full_messages_for(:pdate).each do |message| %>
             <div><%= message %></div>
         <% end %>
