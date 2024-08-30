@@ -7,6 +7,30 @@
         <% end %>
     </div>
 
+    <div>
+        <%= form.label :author %><br>
+        <%= form.text_field :author %>
+        <% book.errors.full_messages_for(:author).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :price %><br>
+        <%= form.text_field :price %>
+        <% book.errors.full_messages_for(:price).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label "Published Date" %><br>
+        <%= form.date_select :pdate, start_year: 1600 %>
+        <% book.errors.full_messages_for(:pdate).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
     <div class="form-buttons">
       <%= form.submit("Create Book") %>
     </div>
