@@ -15,11 +15,11 @@
         <td>
             <%= link_to(book.title, book) %>
         </td>
-    <td class="actions">
-        <%= link_to("Show", book_path(book), class: 'action show') %>
-        <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>
-        <%= link_to("Delete", book_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) %>
-      </td>
+        <td class="actions">
+            <%= link_to("Show", book_path(book), class: 'action show') %>
+            <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>
+            <%= link_to("Delete", book_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}) %>
+        </td>
     </tr>
     <% end %>
   </table>
