@@ -16,9 +16,7 @@
     <% @books.each do |book| %>
     <tr>
         <td>
-            <a href="/books/<%= book.id %>">
-                <%= book.title %>
-            </a>
+            <%= link_to(book.title, book) %>
         </td>
     <td class="actions">
         <%#= link_to("Show", task_path(task), class: 'action show') %>
