@@ -14,4 +14,19 @@ RSpec.describe Book, type: :model do
     expect(subject).not_to be_valid
   end
 
+  it "is valid with an author" do
+    subject.author = 'J.K Rowling'
+    expect(subject).to be_valid
+  end
+
+  it "is valid with a price" do
+    subject.price = 20
+    expect(subject).to be_valid
+  end
+
+  it "is valid with a published date" do
+    subject.published_date = '2024-8-30'
+    expect(subject).to be_valid
+  end
+
 end
