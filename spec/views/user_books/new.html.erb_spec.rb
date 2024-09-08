@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'user_books/new', type: :view do
   before(:each) do
-    assign(:user, User.new(username: "Adam"))
+    assign(:user, User.new(username: 'Adam'))
     assign(:book, Book.new(title: 'Harry Potter', author: 'J.K Rowling', price: '25.0',
                            pdate: { year: '1997', month: 'June', day: '26' }))
     assign(:user_book, UserBook.new(

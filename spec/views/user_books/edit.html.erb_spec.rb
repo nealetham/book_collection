@@ -5,9 +5,10 @@ require 'rails_helper'
 RSpec.describe 'user_books/edit', type: :view do
   before do
     # Create records
-    user = User.new(username: "Adam")
-    book = Book.new(title: 'Harry Potter', author: 'J.K Rowling', price: '25.0', pdate: { year: '1997', month: 'June', day: '26' })
-    @user_book = UserBook.create!(user: user, book: book)
+    user = User.new(username: 'Adam')
+    book = Book.new(title: 'Harry Potter', author: 'J.K Rowling', price: '25.0',
+                    pdate: { year: '1997', month: 'June', day: '26' })
+    @user_book = UserBook.create!(user:, book:)
 
     # Assign to view
     assign(:user_book, @user_book)
