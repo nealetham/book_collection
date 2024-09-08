@@ -6,6 +6,8 @@
 
 <div class="users index">
   <h2>Users</h2>
+  
+  <%= link_to "Add new user", new_user_path %>
 
   <table>
     <thread>
@@ -26,11 +28,3 @@
     </tbody>
   </table>
 </div>
-
-<br>
-
-<%= link_to "New user", new_user_path %>
-
-<br>
-
-<%= link_to "User Book index", user_books_path %>
