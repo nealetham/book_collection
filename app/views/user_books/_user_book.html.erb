@@ -1,0 +1,12 @@
+<div id="<%= dom_id user_book %>">
+  <p>
+    <strong>User:</strong>
+    <%= User.where(id: user_book.user_id).last.username %>
+  </p>
+
+  <p>
+    <strong>Book:</strong>
+    <%= Book.where(id: user_book.book_id).last.title %>
+  </p>
+
+</div>

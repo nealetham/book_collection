@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'books#index'
+  root 'user_books#index'
+
+  resources :user_books
+  resources :users
 
   resources :books do
     member do

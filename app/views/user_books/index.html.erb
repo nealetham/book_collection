@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "User books" %>
+
+<%= link_to("Back to Home", user_books_path, class: "back-link") %>
+
+<div>
+  <h2>User books</h2>
+
+  <%= link_to "Add new user book", new_user_book_path %>
+
+  <table>
+    <thread>
+      <tr>
+        <th>Username</th>
+        <th>Book Title</th>
+      </tr>
+    </thread>
+
+    <tbody>
+      <% @user_books.each do |user_book| %>
+        <tr>
+          <td><%= User.where(id: user_book.user_id).last.username %></td>
+          <td><%= Book.where(id: user_book.book_id).last.title %></td>
+          <td><%= link_to 'Show', user_book %></td>
+          <td><%= link_to 'Edit', edit_user_book_path(user_book) %></td>
+          <td><%= link_to 'Delete', user_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to "User index", users_path %>
+
+<br>
+
+<%= link_to "Book index", books_path %>
