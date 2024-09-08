@@ -2,36 +2,36 @@
 
 <% content_for :title, "User books" %>
 
-<h1>User books</h1>
+<%= link_to("Back to Home", books_path, class: "back-link") %>
 
-<table>
-  <thread>
-    <tr>
-      <th>Username</th>
-      <th>Book Title</th>
-    </tr>
-  </thread>
+<div>
+  <h2>User books</h2>
 
-  <tbody>
-    <% @user_books.each do |user_book| %>
+  <table>
+    <thread>
       <tr>
-        <td><%= User.where(id: user_book.user_id).last.username %></td>
-        <td><%= Book.where(id: user_book.book_id).last.title %></td>
-        <td><%= link_to 'Show', user_book %></td>
-        <td><%= link_to 'Edit', edit_user_book_path(user_book) %></td>
-        <td><%= link_to 'Destroy', user_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Username</th>
+        <th>Book Title</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thread>
+
+    <tbody>
+      <% @user_books.each do |user_book| %>
+        <tr>
+          <td><%= User.where(id: user_book.user_id).last.username %></td>
+          <td><%= Book.where(id: user_book.book_id).last.title %></td>
+          <td><%= link_to 'Show', user_book %></td>
+          <td><%= link_to 'Edit', edit_user_book_path(user_book) %></td>
+          <td><%= link_to 'Destroy', user_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
 <%= link_to "New user book", new_user_book_path %>
-
-<br>
-
-<%= link_to "Book index", books_path %>
 
 <br>
 
