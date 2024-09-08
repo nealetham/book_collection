@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root 'user_books#index'
-  
+
   resources :user_books
   resources :users
 
